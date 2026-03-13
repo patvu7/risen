@@ -2397,7 +2397,7 @@ function switchLogo(id) {
 
 function switchPalette(id) {
   document.querySelectorAll('.palette-section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.palette-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.palette-toggle .palette-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('palette-' + id).classList.add('active');
   event.target.classList.add('active');
 }
