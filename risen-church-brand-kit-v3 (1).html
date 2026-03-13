@@ -431,6 +431,7 @@
     color: var(--charcoal);
     line-height: 1.1;
     margin-bottom: 16px;
+    word-break: break-word;
   }
 
   .type-body-display {
@@ -440,6 +441,7 @@
     color: var(--charcoal);
     line-height: 1.3;
     margin-bottom: 16px;
+    word-break: break-word;
   }
 
   .type-sample {
@@ -910,13 +912,16 @@
     .section-title { font-size: 30px; }
     .section-desc { font-size: 15px; margin-bottom: 40px; }
     .logo-grid, .usage-grid, .do-dont-grid { grid-template-columns: 1fr; }
-    .logo-card { padding: 40px 24px; min-height: 280px; }
+    .logo-card { padding: 40px 24px; min-height: 280px; flex-direction: column !important; }
     .type-display { font-size: 36px; }
     .type-body-display { font-size: 26px; }
     .type-card { padding: 32px 24px; }
     .type-weights { gap: 20px; }
     .type-weight-sample { font-size: 22px; }
+    .hierarchy-demo { padding: 32px 20px; }
     .hierarchy-item { flex-direction: column; gap: 8px; }
+    .hierarchy-spec { min-width: auto; }
+    .hierarchy-label { min-width: auto; }
     .palette-toggle, .font-option-toggle, .pillar-toggle { flex-wrap: wrap; }
     .palette-btn, .font-option-btn, .pillar-btn { padding: 8px 16px; font-size: 10px; letter-spacing: 1.5px; }
     .fourfold-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -927,6 +932,15 @@
     .pillar-purpose { font-size: 22px; }
     .accordion-title { font-size: 18px; }
     .usage-card { padding: 24px; }
+    .spacing-demo { flex-direction: column; padding: 28px 24px; }
+    .spacing-visual { width: 160px; height: 160px; }
+    .photo-filter-recipe { padding: 28px 24px; }
+    .photo-filter-recipe h4 { white-space: normal; }
+    .rc-spec-visual { flex-direction: column !important; gap: 24px !important; padding: 32px 20px; }
+    .color-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+    .color-swatch { height: 100px; }
+    .h-display { font-size: 32px; }
+    .h-h1 { font-size: 26px; }
   }
 
   @media (max-width: 480px) {
@@ -934,6 +948,15 @@
     .section-title { font-size: 26px; }
     .logo-toggle { flex-direction: column; }
     .logo-toggle .palette-btn { width: 100%; text-align: center; }
+    .type-display { font-size: 28px; }
+    .type-body-display { font-size: 22px; }
+    .color-grid { grid-template-columns: 1fr 1fr; }
+    .palette-toggle, .font-option-toggle, .pillar-toggle { flex-direction: column; }
+    .palette-btn, .font-option-btn, .pillar-btn { width: 100%; text-align: center; }
+    .h-display { font-size: 26px; }
+    .h-h1 { font-size: 22px; }
+    .h-h2 { font-size: 20px; }
+    .spacing-visual { width: 140px; height: 140px; }
   }
 
   /* ── Photography ── */
@@ -1760,7 +1783,7 @@
     <div class="type-specimen">
       <div class="type-card">
         <div class="type-family-label">Display: Cormorant Garamond</div>
-        <div style="font-family:'Cormorant Garamond',serif; font-size:64px; font-weight:300; color:var(--charcoal); line-height:1.1; margin-bottom:16px;">Come as you are.</div>
+        <div class="type-display" style="font-family:'Cormorant Garamond',serif;">Come as you are.</div>
         <div class="type-sample">A refined, elegant serif with high contrast. Brings timeless spiritual gravitas. Use for headlines, hero text, sermon titles, and key messaging.</div>
         <div class="type-weights">
           <div class="type-weight">
@@ -1780,7 +1803,7 @@
 
       <div class="type-card">
         <div class="type-family-label">Body: Outfit</div>
-        <div style="font-family:'Outfit',sans-serif; font-size:36px; font-weight:300; color:var(--charcoal); line-height:1.3; margin-bottom:16px;">Welcome home.</div>
+        <div class="type-body-display" style="font-family:'Outfit',sans-serif;">Welcome home.</div>
         <div class="type-sample">Clean geometric sans-serif. Approachable and contemporary while remaining highly legible at small sizes. Use for body copy, navigation, buttons, and UI text.</div>
         <div class="type-weights">
           <div class="type-weight">
@@ -1831,7 +1854,7 @@
       <div class="type-card">
         <span class="option-badge alt">Alternative</span>
         <div class="type-family-label">Display: DM Serif Display</div>
-        <div style="font-family:'DM Serif Display',serif; font-size:64px; font-weight:400; color:var(--charcoal); line-height:1.1; margin-bottom:16px;">Come as you are.</div>
+        <div class="type-display" style="font-family:'DM Serif Display',serif; font-weight:400;">Come as you are.</div>
         <div class="type-sample">Bold and grounded with a classic feel. DM Serif Display is warmer and more approachable than Cormorant. It feels less editorial and more personal. Great for a church that wants to feel established but welcoming.</div>
         <div class="type-weights">
           <div class="type-weight">
@@ -1847,7 +1870,7 @@
 
       <div class="type-card">
         <div class="type-family-label">Body: Plus Jakarta Sans</div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:36px; font-weight:300; color:var(--charcoal); line-height:1.3; margin-bottom:16px;">Welcome home.</div>
+        <div class="type-body-display" style="font-family:'Plus Jakarta Sans',sans-serif;">Welcome home.</div>
         <div class="type-sample">Modern, clean, and slightly softer than Outfit. Jakarta has rounded terminals that give it warmth without sacrificing professionalism. Great for body text, navigation, and digital applications.</div>
         <div class="type-weights">
           <div class="type-weight">
@@ -1898,7 +1921,7 @@
       <div class="type-card">
         <span class="option-badge alt2">Alternative</span>
         <div class="type-family-label">Display: Fraunces</div>
-        <div style="font-family:'Fraunces',serif; font-size:64px; font-weight:300; color:var(--charcoal); line-height:1.1; margin-bottom:16px;">Come as you are.</div>
+        <div class="type-display" style="font-family:'Fraunces',serif;">Come as you are.</div>
         <div class="type-sample">A soft serif with wonky, organic character. Fraunces has a handcrafted, slightly playful quality that feels distinctly human. It avoids the formal rigidity of traditional serifs while still carrying weight and meaning. Excellent for a church community that values authenticity.</div>
         <div class="type-weights">
           <div class="type-weight">
@@ -1918,7 +1941,7 @@
 
       <div class="type-card">
         <div class="type-family-label">Body: Nunito Sans</div>
-        <div style="font-family:'Nunito Sans',sans-serif; font-size:36px; font-weight:300; color:var(--charcoal); line-height:1.3; margin-bottom:16px;">Welcome home.</div>
+        <div class="type-body-display" style="font-family:'Nunito Sans',sans-serif;">Welcome home.</div>
         <div class="type-sample">Rounded and friendly without being childish. Nunito Sans is one of the warmest sans-serifs available. Its gentle curves pair beautifully with Fraunces' organic shapes. Ideal for a community-first brand.</div>
         <div class="type-weights">
           <div class="type-weight">
