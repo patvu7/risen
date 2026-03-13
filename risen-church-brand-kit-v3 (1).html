@@ -395,6 +395,10 @@
     .rc-primary-row, .rc-spec-grid { grid-template-columns: 1fr; }
     .rc-secondary-row { grid-template-columns: 1fr; }
     .rc-logo-cell.wide-cell { flex-direction: column; min-height: 260px; }
+    .rc-logo-cell.primary-cell { min-height: 280px; padding: 40px 24px; }
+    .rc-logo-cell.secondary-cell { min-height: 240px; padding: 32px 20px; }
+    .rc-primary-row { gap: 24px; }
+    .rc-secondary-row { gap: 16px; }
   }
 
   /* ── Typography ── */
@@ -899,11 +903,37 @@
 
   @media (max-width: 768px) {
     section { padding: 60px 24px; }
+    .cover { padding: 40px 24px; }
+    .cover-risen { font-size: 32px !important; letter-spacing: 6px !important; }
+    .cover-logo svg { width: 140px; height: 160px; }
+    .cover-title { font-size: 12px; letter-spacing: 4px; }
+    .section-title { font-size: 30px; }
+    .section-desc { font-size: 15px; margin-bottom: 40px; }
     .logo-grid, .usage-grid, .do-dont-grid { grid-template-columns: 1fr; }
-    .type-display { font-size: 42px; }
+    .logo-card { padding: 40px 24px; min-height: 280px; }
+    .type-display { font-size: 36px; }
+    .type-body-display { font-size: 26px; }
+    .type-card { padding: 32px 24px; }
+    .type-weights { gap: 20px; }
+    .type-weight-sample { font-size: 22px; }
     .hierarchy-item { flex-direction: column; gap: 8px; }
     .palette-toggle, .font-option-toggle, .pillar-toggle { flex-wrap: wrap; }
-    .fourfold-grid { grid-template-columns: 1fr 1fr; }
+    .palette-btn, .font-option-btn, .pillar-btn { padding: 8px 16px; font-size: 10px; letter-spacing: 1.5px; }
+    .fourfold-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fourfold-card { padding: 24px 16px; }
+    .fourfold-desc { font-size: 13px; }
+    .footer { padding: 60px 24px; }
+    .footer-text { font-size: 20px; }
+    .pillar-purpose { font-size: 22px; }
+    .accordion-title { font-size: 18px; }
+    .usage-card { padding: 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .fourfold-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 26px; }
+    .logo-toggle { flex-direction: column; }
+    .logo-toggle .palette-btn { width: 100%; text-align: center; }
   }
 
   /* ── Photography ── */
@@ -1113,11 +1143,13 @@
 
   @media (max-width: 768px) {
     .photo-showcase { grid-template-columns: 1fr; }
+    .photo-half img { height: 280px; }
     .photo-principles { grid-template-columns: 1fr; }
+    .photo-principle { padding: 24px; }
     .photo-filter-recipe { flex-direction: column; gap: 24px; }
-    .photo-full-example img { height: 300px; }
+    .photo-full-example img { height: 250px; }
     .photo-full-overlay { padding: 24px; }
-    .photo-full-overlay .quote { font-size: 24px; }
+    .photo-full-overlay .quote { font-size: 22px; }
   }
 
 </style>
@@ -1141,8 +1173,8 @@
       <circle cx="120" cy="38" r="1.5" fill="#C4A882" opacity="0.4"/>
     </svg>
   </div>
-  <div style="text-align:center; position:relative; z-index:1;">
-    <div style="font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:300; letter-spacing:8px; color:#F5EDE3;">RISEN</div>
+  <div class="cover-text" style="text-align:center; position:relative; z-index:1;">
+    <div class="cover-risen" style="font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:300; letter-spacing:8px; color:#F5EDE3;">RISEN</div>
     <div style="font-family:'Outfit',sans-serif; font-size:11px; font-weight:500; letter-spacing:6px; text-transform:uppercase; color:#C4A882; margin-top:8px;">CHURCH</div>
   </div>
   <div class="cover-title">Brand Style Kit</div>
@@ -1249,7 +1281,7 @@
     </div>
     <div class="spacing-info">
       <h4>Minimum Clear Space</h4>
-      <p>Always maintain a clear zone around the logo equal to the height of the cross arm. This ensures the mark remains legible and uncluttered in all applications. Minimum size: 32px width for digital, 12mm for print.</p>
+      <p>Keep a clear zone around the logo equal to the cross arm height. This keeps the mark legible in all uses. Minimum size: 32px for digital, 12mm for print.</p>
     </div>
   </div>
   </div><!-- end logo-option A -->
@@ -1258,9 +1290,9 @@
   <div class="logo-option" id="logo-b">
   <div class="section-title">The Rooted Cross</div>
   <div class="section-desc">
-    "Rooted and built up in Him, strengthened in the faith." — Colossians 2:7
+    "Rooted and built up in Him, strengthened in the faith." Colossians 2:7
     <br><br>
-    The cross becomes a living thing — its vertical beam tapers into branching roots below and opens into a botanical leaf above. A second leaf unfurls from the stem, and the roots flow with natural curves and organic tapering. The structural cross and the living growth are inseparable — exactly like faith and discipleship. Three main roots echo the Trinity.
+    The cross becomes a living thing. Its vertical beam tapers into roots below and opens into a leaf above. A second leaf unfurls from the stem, and the roots flow with natural curves. The cross and the growth are one, just like faith and discipleship. Three main roots echo the Trinity.
   </div>
 
   <!-- Primary Lockups -->
@@ -1293,7 +1325,7 @@
         <text x="100" y="300" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="34" font-weight="300" letter-spacing="8" fill="#2C2825">RISEN</text>
         <text x="100" y="320" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" font-weight="500" letter-spacing="6" fill="#A0785A">CHURCH</text>
       </svg>
-      <div class="rc-cell-label">Primary — Light</div>
+      <div class="rc-cell-label">Primary / Light</div>
     </div>
 
     <!-- DARK -->
@@ -1323,14 +1355,14 @@
         <text x="100" y="300" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="34" font-weight="300" letter-spacing="8" fill="#F5EDE3">RISEN</text>
         <text x="100" y="320" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" font-weight="500" letter-spacing="6" fill="#C4A882">CHURCH</text>
       </svg>
-      <div class="rc-cell-label">Primary — Dark</div>
+      <div class="rc-cell-label">Primary / Dark</div>
     </div>
   </div>
 
   <!-- Icon Mark & Colour Variants -->
   <div class="rc-sub-label">Icon Mark &amp; Colour Variants</div>
   <div class="rc-secondary-row">
-    <!-- Icon — Light -->
+    <!-- Icon / Light -->
     <div class="rc-logo-cell light secondary-cell">
       <svg width="86" height="145" viewBox="0 0 180 280" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="90" y1="62" x2="90" y2="172" stroke="#2C2825" stroke-width="5" stroke-linecap="round"/>
@@ -1348,7 +1380,7 @@
       </svg>
       <div class="rc-cell-label">Icon Mark</div>
     </div>
-    <!-- Icon — Dark -->
+    <!-- Icon / Dark -->
     <div class="rc-logo-cell dark secondary-cell">
       <svg width="86" height="145" viewBox="0 0 180 280" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="90" y1="62" x2="90" y2="172" stroke="#F5EDE3" stroke-width="5" stroke-linecap="round"/>
@@ -1364,9 +1396,9 @@
         <path d="M60 218 C56 226 52 232 48 234" stroke="#C4A882" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.18"/>
         <path d="M120 216 C124 224 128 230 132 232" stroke="#C4A882" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.18"/>
       </svg>
-      <div class="rc-cell-label">Icon — Dark</div>
+      <div class="rc-cell-label">Icon / Dark</div>
     </div>
-    <!-- Monotone — Sage -->
+    <!-- Monotone / Sage -->
     <div class="rc-logo-cell sage-bg secondary-cell">
       <svg width="86" height="145" viewBox="0 0 180 280" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="90" y1="62" x2="90" y2="172" stroke="#FDFCFA" stroke-width="5" stroke-linecap="round"/>
@@ -1380,7 +1412,7 @@
         <path d="M72 208 C66 214 58 218 50 220" stroke="#FDFCFA" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.25"/>
         <path d="M108 206 C114 212 122 216 130 218" stroke="#FDFCFA" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.25"/>
       </svg>
-      <div class="rc-cell-label">Monotone — Sage</div>
+      <div class="rc-cell-label">Monotone / Sage</div>
     </div>
   </div>
 
@@ -1397,7 +1429,7 @@
         <path d="M90 172 C94 186 104 202 120 216" stroke="#FDFCFA" stroke-width="3.2" fill="none" stroke-linecap="round" opacity="0.45"/>
         <path d="M90 172 C90 190 89 214 88 234" stroke="#FDFCFA" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.28"/>
       </svg>
-      <div class="rc-cell-label">Monotone — Clay</div>
+      <div class="rc-cell-label">Monotone / Clay</div>
     </div>
     <!-- Sand background -->
     <div class="rc-logo-cell sand-bg secondary-cell">
@@ -1410,7 +1442,7 @@
         <path d="M90 172 C94 186 104 202 120 216" stroke="#A0785A" stroke-width="3.2" fill="none" stroke-linecap="round" opacity="0.7"/>
         <path d="M90 172 C90 190 89 214 88 234" stroke="#A0785A" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.45"/>
       </svg>
-      <div class="rc-cell-label">Icon — Sand</div>
+      <div class="rc-cell-label">Icon / Sand</div>
     </div>
     <!-- Charcoal monotone -->
     <div class="rc-logo-cell light secondary-cell">
@@ -1423,7 +1455,7 @@
         <path d="M90 172 C94 186 104 202 120 216" stroke="#2C2825" stroke-width="3.2" fill="none" stroke-linecap="round" opacity="0.5"/>
         <path d="M90 172 C90 190 89 214 88 234" stroke="#2C2825" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.3"/>
       </svg>
-      <div class="rc-cell-label">Monotone — Charcoal</div>
+      <div class="rc-cell-label">Monotone / Charcoal</div>
     </div>
   </div>
 
@@ -1443,7 +1475,7 @@
         <div style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:300; letter-spacing:7px; color:#2C2825; line-height:1;">RISEN</div>
         <div style="font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:5px; color:#A0785A; margin-top:6px;">CHURCH</div>
       </div>
-      <div class="rc-cell-label">Horizontal — Light</div>
+      <div class="rc-cell-label">Horizontal / Light</div>
     </div>
     <div class="rc-logo-cell dark wide-cell">
       <svg width="52" height="86" viewBox="0 0 180 280" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1458,7 +1490,7 @@
         <div style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:300; letter-spacing:7px; color:#F5EDE3; line-height:1;">RISEN</div>
         <div style="font-family:'Outfit',sans-serif; font-size:10px; font-weight:500; letter-spacing:5px; color:#C4A882; margin-top:6px;">CHURCH</div>
       </div>
-      <div class="rc-cell-label">Horizontal — Dark</div>
+      <div class="rc-cell-label">Horizontal / Dark</div>
     </div>
   </div>
 
@@ -1485,7 +1517,7 @@
       </div>
       <div class="rc-spec-info">
         <h4>Minimum Clear Space</h4>
-        <p>Maintain a clear zone around the full mark equal to the height of the cross arm (distance from crossbar top to leaf base, marked as "x"). This ensures legibility in all layouts. Apply to both stacked and horizontal lockups.</p>
+        <p>Keep a clear zone around the full mark equal to the cross arm height (crossbar top to leaf base, marked "x"). Apply to both stacked and horizontal lockups.</p>
       </div>
     </div>
 
@@ -1531,7 +1563,7 @@
       </div>
       <div class="rc-spec-info">
         <h4>Minimum Size</h4>
-        <p>At 32px width, the icon retains the cross, leaf, and three main roots. At 20px (favicon), simplify to cross + leaf silhouette + two outer roots only. For print, minimum width is 12mm. Below these thresholds, drop the secondary leaf, tendrils, and veins.</p>
+        <p>At 32px width, keep the cross, leaf, and three main roots. At 20px (favicon), use cross + leaf silhouette + two outer roots only. Print minimum is 12mm. Below these sizes, drop the secondary leaf, tendrils, and veins.</p>
       </div>
     </div>
   </div>
@@ -1546,9 +1578,9 @@
   <div class="section-label">02. Color Palette</div>
   <div class="section-title">Earthy Nature</div>
   <div class="section-desc">
-    These colors are meant to feel grounded and natural, like walking the same dusty roads and sitting under the same open sky. The palette puts you in the moment, close to the earth and close to Him.
+    These colors feel grounded and natural, like dusty roads and open sky. The palette puts you in the moment, close to the earth and close to Him.
     <br><br>
-    Option A is the original warm earth tone palette. Option B introduces a cooler, twilight-inspired direction that feels contemplative and modern.
+    Option A is the original warm earth tone palette. Option B is a cooler, twilight-inspired direction.
   </div>
 
   <div class="palette-toggle">
@@ -1714,7 +1746,7 @@
   <div class="section-label">03. Typography</div>
   <div class="section-title">Voice & Tone</div>
   <div class="section-desc">
-    Three font pairing options for the team to compare. Each brings a different personality, from refined elegance to warm approachability to editorial gravitas.
+    Three font pairings to compare. Each brings a different personality, from refined elegance to warm approachability to editorial weight.
   </div>
 
   <div class="font-option-toggle">
@@ -1939,25 +1971,25 @@
   <div class="section-label">04. Guidelines</div>
   <div class="section-title">Usage & Tone</div>
   <div class="section-desc">
-    The brand should always feel warm, welcoming, and rooted in community. Every touchpoint, from the website to printed materials, should invite people in and feel genuine.
+    The brand should always feel warm, welcoming, and rooted in community. Every touchpoint should invite people in and feel genuine.
   </div>
 
   <div class="usage-grid">
     <div class="usage-card">
       <h4>Voice Principles</h4>
-      <p>Try to speak with warmth over polish. Plain language tends to work better than religious jargon. Aim to be inviting without being pushy, and consider letting silence and space do the work. Not every surface needs to shout.</p>
+      <p>Speak with warmth over polish. Plain language works better than religious jargon. Be inviting without being pushy, and let silence and space do the work.</p>
     </div>
     <div class="usage-card">
       <h4>Photography</h4>
-      <p>Lean toward authentic, warmly-lit photography with natural earth tones. Candid moments often feel better than posed shots. A slight desaturation with warm tones can help. Try to show people who feel real, relatable, and diverse.</p>
+      <p>Use authentic, warmly-lit photography with natural earth tones. Candid moments feel better than posed shots. A slight desaturation with warm tones helps. Show people who feel real, relatable, and diverse.</p>
     </div>
     <div class="usage-card">
       <h4>Iconography</h4>
-      <p>Thin-stroke, rounded icons tend to pair well with the cross mark's weight. A 1.5px stroke width at standard sizes is a good starting point. Icons should feel gentle and minimal rather than heavy or illustrative.</p>
+      <p>Thin-stroke, rounded icons pair well with the cross mark. Use 1.5px stroke width at standard sizes as a starting point. Keep icons gentle and minimal.</p>
     </div>
     <div class="usage-card">
       <h4>Digital Applications</h4>
-      <p>Consider using the display scale for website headers on Sand or Warm White backgrounds. Clay buttons with Warm White text work well, with the body font at 13px medium weight and generous padding. Rounded corners around 8 to 12px tend to fit the feel.</p>
+      <p>Use the display scale for website headers on Sand or Warm White backgrounds. Clay buttons with Warm White text work well. Body font at 13px medium weight with generous padding. Rounded corners at 8 to 12px.</p>
     </div>
   </div>
 
@@ -1995,7 +2027,7 @@
   <div class="section-label">05. Photography</div>
   <div class="section-title">Real Moments</div>
   <div class="section-desc">
-    Our photography should feel like a window into our community, not a curated performance. We want images that are warm, candid, and grounded — capturing people as they really are, in moments that feel genuine and alive.
+    Our photography should feel like a window into our community, not a curated performance. We want images that are warm, candid, and grounded, capturing people as they really are in moments that feel genuine and alive.
   </div>
 
   <!-- Before / After Comparison -->
@@ -2021,17 +2053,17 @@
     <div class="photo-principle">
       <div class="photo-principle-icon warm">☀</div>
       <h4>Warm Light</h4>
-      <p>Lean into natural, golden-hour tones. Warmly lit scenes create intimacy and welcome. Avoid harsh flash or cold fluorescent feels. If shooting indoors, edit toward warmth.</p>
+      <p>Use natural, golden-hour tones. Warm light creates intimacy and welcome. Avoid harsh flash or cold fluorescent lighting. When shooting indoors, edit toward warmth.</p>
     </div>
     <div class="photo-principle">
       <div class="photo-principle-icon earth">◉</div>
       <h4>Candid & Real</h4>
-      <p>Capture people in authentic moments — laughing, serving, praying, connecting. Posed group shots have their place, but candid images carry more emotional weight for the brand.</p>
+      <p>Capture people in authentic moments: laughing, serving, praying, connecting. Posed group shots have their place, but candid images carry more weight for the brand.</p>
     </div>
     <div class="photo-principle">
       <div class="photo-principle-icon light">◐</div>
       <h4>Earth Tones</h4>
-      <p>A slight desaturation paired with warm color grading keeps imagery cohesive with the brand palette. Muted greens, soft clay tones, and warm shadows feel right.</p>
+      <p>Slight desaturation with warm color grading keeps imagery cohesive with the brand palette. Muted greens, soft clay tones, and warm shadows work well.</p>
     </div>
   </div>
 
@@ -2039,7 +2071,7 @@
   <div class="photo-filter-recipe">
     <div>
       <h4>Suggested Edit Recipe</h4>
-      <p>These CSS-equivalent adjustments can be replicated in Lightroom, VSCO, or any editing tool. The goal is gentle warmth and softness — not a heavy filter.</p>
+      <p>These adjustments can be replicated in Lightroom, VSCO, or any editing tool. The goal is gentle warmth and softness, not a heavy filter.</p>
     </div>
     <div>
       <div class="filter-tags">
@@ -2058,7 +2090,7 @@
   <div class="section-label">06. Identity</div>
   <div class="section-title">Who We Are</div>
   <div class="section-desc">
-    The beliefs and values that shape everything we do. These pillars guide our mission, our community, and our faith.
+    The beliefs and values that shape everything we do. These guide our mission, community, and faith.
   </div>
 
   <div class="pillar-toggle">
